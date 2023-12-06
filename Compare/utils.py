@@ -39,7 +39,7 @@ def to_psnr(dehaze, gt):
     mse_list = [torch.mean(torch.squeeze(mse_split[ind])).item() for ind in range(len(mse_split))]
 
     intensity_max = 1.0
-    psnr_list = [10.0 * log10(intensity_max / mse) for mse in mse_list]
+    psnr_list = [10.0 * log10(intensity_max / (mse+1e-5)) for mse in mse_list]
     return psnr_list
 
 
