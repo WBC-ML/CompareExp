@@ -34,10 +34,10 @@ def populate_train_list(orig_images_path, hazy_images_path, perc=11):
     tmp_dict = {}
 
     for image in image_list_haze:
-        # image_this = image.split("/")[-1]
+        image_this = image.split("/")[-1]
         # image_this = image.split("\\")[-1]
         # key = image.split("_")[0] + "_" + image.split("_")[1] + ".jpg"
-        key = image # orig_images_path + image_this.split('/')[-1].split("_")[0] + "_" + image_this.split("_")[1] + ".jpg"
+        key = orig_images_path + image_this # .split('/')[-1].split("_")[0] + "_" + image_this.split("_")[1] + ".jpg"
         # key = image  # .split('_')[0] + '.jpg'
         if key in tmp_dict.keys():
             tmp_dict[key].append(image)
